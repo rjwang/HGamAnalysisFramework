@@ -3,6 +3,7 @@
 
 #include "HGamAnalysisFramework/HgammaIncludes.h"
 #include "HGamAnalysisFramework/HgammaAnalysis.h"
+#include "HGamAnalysisFramework/Config.h"
 
 #include "EventLoop/DirectDriver.h"
 #include "EventLoop/Job.h"
@@ -21,8 +22,9 @@ namespace HG {
   //! \author Dag Gillberg
   //@{
 
+  HG::StrV parseArguments(Config *conf, int argc, char **argv); //RJ
   void runJob(HgammaAnalysis *alg, int argc, char** argv);
-  
+
   //@}
 }
 
