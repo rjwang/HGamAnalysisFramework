@@ -134,6 +134,7 @@ protected:
   TString getMCSampleName(int mcChannelNumber = -1);
   int getNtotalEvents(int mcChannelNumber = -1);
   TH1F *getCutFlowHistogram(int mcID, TString suffix="");
+  TH1F *getCutFlowHistogram(TString cutFlowName, TString suffix="");
   virtual double getCrossSection(int mcChannelNumber = -1);
   virtual double getGeneratorEfficiency(int mcChannelNumber = -1);
   virtual double getGeneratorHiggsMass(int mcChannelNumber = -1);

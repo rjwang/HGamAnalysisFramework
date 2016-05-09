@@ -562,6 +562,15 @@ TH1F* HgammaAnalysis::getCutFlowHistogram(int mcID, TString suffix) {
   return cflowHist;
 }
 
+TH1F* HgammaAnalysis::getCutFlowHistogram(TString cutFlowName, TString suffix) {
+  // access the initial number of weighed events
+  TH1F *cflowHist = (TH1F*)wk()->inputFile()->Get(cutFlowName+suffix);
+  if (cflowHist==nullptr)
+    HG::fatal("Cannot access cut-flow histogram "+cutFlowName+suffix+" in input file");
+  return cflowHist;
+}
+
+
 // intial sum of events, including pileup weights
 double HgammaAnalysis::getIntialSumOfWeights(int mcID) {
   if (mcID == -1) mcID = eventInfo()->mcChannelNumber();
